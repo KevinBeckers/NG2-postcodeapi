@@ -32,20 +32,20 @@ export class PostcodeApiService {
 
         return this.http.get(this.apiUrl + url, this.getHeaders())
           .map((res:Response) => res.json())
-          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+          .catch((error:any) => Observable.throw(error.json() || 'Server error'));
   }
 
   public getAddress(id: string) : Observable<any> {
         return this.http.get(this.apiUrl + "addresses/" + id + "/", this.getHeaders())
           .map((res:Response) => res.json())
-          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+          .catch((error:any) => Observable.throw(error.json() || 'Server error'));
   }
 
 
   public getPostcodes(postcode: string) : Observable<any> {
         return this.http.get(this.apiUrl + "postcodes/" + postcode + "/", this.getHeaders())
           .map((res:Response) => res.json())
-          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+          .catch((error:any) => Observable.throw(error.json() || 'Server error'));
   }
 
   public getPostcode(postcode: number = null) : Observable<any> {
@@ -57,6 +57,6 @@ export class PostcodeApiService {
 
         return this.http.get(this.apiUrl + url, this.getHeaders())
           .map((res:Response) => res.json())
-          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+          .catch((error:any) => Observable.throw(error.json() || 'Server error'));
   }
 }
