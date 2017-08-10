@@ -52,7 +52,7 @@ export class PostcodeApiService {
 
         let url = "postcodes/";
         if(postcode != null) {
-          url += "&postcodeArea=" + postcode;
+          url += "?postcodeArea=" + postcode;
         }
 
         return this.http.get(this.apiUrl + url, this.getHeaders())
